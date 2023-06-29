@@ -5,9 +5,6 @@ import { ThemeSupa } from "@supabase/auth-ui-shared";
 import logo from "../assets/logo256.png";
 import styled from "styled-components";
 
-// interface LoginProps {
-//   setSession: React.Dispatch<React.SetStateAction<Session | null>>;
-// }
 export const Login = () => {
   return (
     <>

@@ -223,7 +223,6 @@ const MessageInput = styled.input`
     &:focus {
       outline: none;
       border: 2px solid #14ac68;
-      /* box-shadow: 0 0 10px #14ac68; */
     }
   }
 `;
