@@ -5,6 +5,7 @@ import { Message } from "../types/collection";
 import styled from "styled-components";
 import { ChatMessage } from ".";
 import defaultAvatar from "../assets/defaultAvatar.png";
+
 interface ChatRoomProps {
   session: Session;
 }
