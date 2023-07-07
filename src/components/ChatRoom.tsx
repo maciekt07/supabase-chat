@@ -1,7 +1,7 @@
 import { Session, User } from "@supabase/supabase-js";
 import { supabase } from "../lib/supabase-client";
 import { useEffect, useState } from "react";
-import { Message } from "../types/collection";
+import { Message, NewMessage } from "../types/collection";
 import styled from "styled-components";
 import { ChatMessage } from ".";
 import defaultAvatar from "../assets/defaultAvatar.png";
@@ -62,15 +62,16 @@ export const ChatRoom = ({ session }: ChatRoomProps) => {
       return;
     }
 
-    const newMessage = {
+    setIsSending(true);
+
+    const newMessage: NewMessage = {
       user_name: userName,
       message_content: messageToSend,
       user_avatar_url: user.user_metadata.avatar_url || null,
       user_id: user.id,
-      provider: user.app_metadata.provider,
+      provider: user.app_metadata.provider || null,
     };
 
-    setIsSending(true);
     const { error } = await supabase.from("Chat").insert([newMessage]);
 
     if (error) {
